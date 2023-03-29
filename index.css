@@ -1,3 +1,77 @@
-#h1{
-    color: red;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 100px;
+    padding: 10px;
+}
+
+.nav-items > ul{
+    display: flex;
+}
+
+.nav-items > ul> li{
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+    font-size: 20px;
+}
+
+
+.body{
+    border: 1px solid black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.footer{
+    border: 1px solid black;
+    display: flex;
+    
+}
+
+.hotel-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.hotel-card{
+    
+    width: 300px;
+    margin: 5px;
+    border-radius: 25px;
+    border: 2px solid lightslategray;
+}
+
+.hotel-card-details{
+    padding: 10px;;
+}
+
+.hotel-card-details >p{
+    font-size: 10px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hotel-logo{
+    width: 100%;
+    border-radius: 25px;
+}
+
+.search{
+    padding: 10px;
+}
+
+.hotel-container{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.connect{
+    padding-left: 10%;
 }
