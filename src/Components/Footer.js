@@ -1,6 +1,7 @@
 
-const Footer = () =>(
-    <div className="footer">
+const Footer = () =>{
+    {console.log("rendering footer");}
+    return (<div className="footer">
         <div className="copyright">
             <h3>Copyright@2023 Saturn Platforms</h3>
         </div>
@@ -13,7 +14,7 @@ const Footer = () =>(
             <h3>Channels</h3>
             <p>Youtube</p>
         </div>
-    </div>
-);
+    </div>)
+};
 
 export default Footer;

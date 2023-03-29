@@ -75,3 +75,28 @@
 .connect{
     padding-left: 10%;
 }
+
+.shimmerdiv{
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    border-radius: 25px;
+    background: rgb(185, 183, 183);
+}
+
+.shimmerdivInfo{
+    width: 300px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 25px;
+    background: rgb(185, 183, 183);
+}
+
+.shimmerview{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.LogInOut{
+    font-weight: bold;
+}
