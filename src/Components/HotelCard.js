@@ -8,10 +8,8 @@ export const HotelCard = (props) =>{
             src = {IMG_CARD_CDN+cloudinaryImageId} />
         <div className="hotel-card-details">
             <h5>{name}</h5>
-            <p>{cuisines.join(", ")}</p>
-            <p>{avgRating} stars</p>
-            <p>{deliveryTime}</p>
-            <p>₹{costForTwo/100} FOR TWO</p>
+            <p>{cuisines.join(", ")} ☼ {avgRating} +" stars"</p>
+            <p>{avgRating} stars 🍪 {deliveryTime} mins 🍪  ₹{costForTwo/100} FOR TWO</p>
         </div>
     </div>
 }

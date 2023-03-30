@@ -1,6 +1,8 @@
 import { HotelCard } from "./HotelCard";    
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
+import { FOOD_API_LOAD } from "../constants";
+import {Link} from 'react-router-dom';
 
 function filterData(searchText, restaurants){
     const filterdata =  restaurants.filter(res => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -14,7 +16,7 @@ const Body = () =>{
     }, []);
 
     async function getRestaurants(){
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch(FOOD_API_LOAD);
         const json = await data.json();
         setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
         setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -37,12 +39,7 @@ const Body = () =>{
     
     return (allRestaurants.length===0)? (
         <div className="body">
-            <div className="shimmerview">
-                
-                <Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/>
-                <Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/><Shimmer/>
-                
-            </div>
+                <Shimmer/>
         </div>
     ) : (
     <div className="body">
@@ -67,7 +64,9 @@ const Body = () =>{
             {
                 (!filteredRestaurants|| filteredRestaurants.length==0)?
                     (<h1> No such restaurant found, please check your input! </h1>):
-                    filteredRestaurants.map(res => <HotelCard key={res.data.id} resData={res}/>)
+                    filteredRestaurants.map(res => {
+                        return (<Link to={"/restaurant/"+ res.data.id}><HotelCard key={res.data.id} resData={res}/></Link>)
+                    })
             }
         </div>
     </div>)

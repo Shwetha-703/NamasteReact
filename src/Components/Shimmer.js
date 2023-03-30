@@ -1,10 +1,9 @@
 
 const Shimmer = () =>{
     return (
-        
-            <div className="shimmerdiv">
-            </div>
-        
+        <div className="shimmerview">
+            {Array(30).fill("").map((e, index)=><div key={index} className="shimmerdiv"></div>)}
+        </div>
     )
 }
 

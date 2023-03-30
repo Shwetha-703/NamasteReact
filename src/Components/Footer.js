@@ -1,6 +1,5 @@
 
 const Footer = () =>{
-    {console.log("rendering footer");}
     return (<div className="footer">
         <div className="copyright">
             <h3>Copyright@2023 Saturn Platforms</h3>
