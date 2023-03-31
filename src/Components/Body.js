@@ -17,7 +17,7 @@ const Body = () =>{
 
     const isOffLine = useOffline();
 
-    if(isOffLine) return (<h1>Oops, Looks like you're offline, check your internet connection!</h1>)
+    if(isOffLine) return (<h1> 🔴 Oops, Looks like you're offline, check your internet connection!</h1>)
 
     if(!allRestaurants) return null; //early return 
     
