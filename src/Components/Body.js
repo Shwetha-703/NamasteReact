@@ -1,39 +1,23 @@
 import { HotelCard } from "./HotelCard";    
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import Shimmer from "./Shimmer";
-import { FOOD_API_LOAD } from "../constants";
 import {Link} from 'react-router-dom';
-
-function filterData(searchText, restaurants){
-    const filterdata =  restaurants.filter(res => res.data.name.toLowerCase().includes(searchText.toLowerCase()));
-    return filterdata;
-}
+import { useRestaurants } from "../../utils/useRestaurants";
+import { filterData } from "../../utils/helper";
+import { useOffline } from "../../utils/useOffline";
 
 const Body = () =>{
 
-    useEffect(()=>{
-        getRestaurants();   
-    }, []);
+    const restaurants = useRestaurants();
 
-    async function getRestaurants(){
-        const data = await fetch(FOOD_API_LOAD);
-        const json = await data.json();
-        setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
-
+    const allRestaurants = restaurants.allRestaurants;
+    const filteredRestaurants = restaurants.filteredRestaurants;
 
     const [searchText, setSearchText] = useState();
-    const [allRestaurants, setAllRestaurants] = useState([]);
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-    createElements = () =>{
-        const elements = [];
-        for(let i=1;i<30;i++){
-            elements.push(<Shimmer key={i}/>);
-        }
-        return elements;
-    }
+    const isOffLine = useOffline();
+
+    if(isOffLine) return (<h1>Oops, Looks like you're offline, check your internet connection!</h1>)
 
     if(!allRestaurants) return null; //early return 
     
