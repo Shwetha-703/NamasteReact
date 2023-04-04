@@ -1,4 +1,9 @@
-.header{
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+/* .header{
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -129,4 +134,4 @@
 
 .restoInfo{
     padding: 20px;
-}
+} */

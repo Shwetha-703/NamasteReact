@@ -3,7 +3,7 @@ import React from "react";
 class Profile extends React.Component{
 
     constructor(props){
-        super(props);
+        super();
         //console.log("(C)Profile constructor");
         this.state={
             userInfo:{
@@ -35,7 +35,7 @@ class Profile extends React.Component{
     render(){
         //console.log("(C)Profile render")
         return(
-            <div>
+            <div className="font-thin">
                 <h2> {this.props.name} </h2>
                 <h3> User Name : Shweta </h3>
                 <h3> User Location : Bangalore</h3>

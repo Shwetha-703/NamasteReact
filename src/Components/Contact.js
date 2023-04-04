@@ -2,7 +2,7 @@
 
 const Contact =() =>{
     return (
-        <div className="contactAboutUs">
+        <div className="bg-gray-200 justify-center text-center">
         <h2>Write a message</h2>
             <p>"If you got any questions, please do not hesitate to send us a message. We reply within 24 working hours."</p>
 

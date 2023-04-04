@@ -35,7 +35,7 @@ class About extends Component{
     render(){
         //console.log("(P)render");
         return(
-            <div className="contactAboutUs">
+            <div className="bg-gray-200 justify-center text-center">
                 <h1>
                     about #namaste react
                 </h1>
